@@ -1,6 +1,9 @@
 import UIKit
 public class OnBoardingBanner {
     
+    private let slides: [Slide]
+    private let tintColor: UIColor
+    
     private var onboardingViewController: OnboardViewController = {
         let controller = OnboardViewController()
         controller.modalTransitionStyle = .crossDissolve
@@ -8,8 +11,9 @@ public class OnBoardingBanner {
         return controller
     }()
     
-    public init(){
-        
+    public init(slides: [Slide], tintColor: UIColor){
+        self.slides = slides
+        self.tintColor = tintColor
     }
     
     public func launchOnBoarding(rootVC: UIViewController){
